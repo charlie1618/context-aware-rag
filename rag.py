@@ -1,4 +1,4 @@
-import 
+import os
 
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
@@ -22,7 +22,7 @@ db = Chroma(
 
 retriever = db.as_retriever(
     search_type = 'similarity_score_threshold',
-    search_kwargs = {'k':3, 'score_threshold':0.4}
+    search_kwargs = {'k': 3, 'score_threshold': 0.4}
 )
 
 query = input('Enter your query:\n')
